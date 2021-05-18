@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // let token = "d2ef4A2W5aXfJzD9FMmKwLmkOwvgMdbVnECjdlzf";
+    let token = "fer";
+    fetch("http://restblog/api/user", {
+        method: 'get',
+        headers: new Headers({
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/json',
+        })
+    }).then(response => {
+        response.json().then(users => {
+            console.log(users);
+        }).catch(errors => console.error(errors));
+    });
+
+    // fetch("http://tools.codeup.test/api/cohorts", {
+    //     method: 'get',
+    //     headers: new Headers({
+    //         // 'Authorization': 'Bearer ' + token,
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json',
+    //     })
+    // }).then(response => {
+    //     response.json().then(users => {
+    //         console.log(users);
+    //     }).catch(errors => console.error(errors));
+    // })
+</script>
+</body>
+</html>
